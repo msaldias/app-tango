@@ -13,7 +13,12 @@
 
     <article class="content_format row" *ngIf="weHaveResults">
         <div class="col-md-8 col-md-offset-2">
-            <h1>{{resBlog.title}}</h1>
+            
+            <h1>
+                <button type="button" class="btn btn-primary btn-sm" (click)="goBack()">
+                    <i class="fa fa-backward"></i>
+                </button> {{resBlog.title}}
+            </h1>
             <p>{{resBlog.date}}</p>
             <p>{{resBlog.introParagraph}}</p>
 

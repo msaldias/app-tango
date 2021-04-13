@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { BlogService } from 'src/app/services/blog.service';
 import { UtilsService } from 'src/app/services/utils.service';
@@ -20,6 +21,7 @@ export class BlogDetailComponent implements OnInit {
   constructor(
     private blogService: BlogService,
     private utils: UtilsService,
+    private location: Location,
     private route: ActivatedRoute       
   ) { }
 
@@ -40,6 +42,10 @@ export class BlogDetailComponent implements OnInit {
         console.log(this.resBlog);
         this.weHaveResults = true;
       });
-  }    
+  }   
+  
+  goBack() {
+    this.location.back();
+  }
 
 }

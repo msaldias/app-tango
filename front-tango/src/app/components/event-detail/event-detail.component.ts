@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { EventService } from 'src/app/services/event.service';
 import { UtilsService } from 'src/app/services/utils.service';
@@ -20,6 +21,7 @@ export class EventDetailComponent implements OnInit {
   constructor(
     private eventService: EventService,
     private utils: UtilsService,
+    private location: Location,
     private route: ActivatedRoute    
   ) { }
 
@@ -41,5 +43,9 @@ export class EventDetailComponent implements OnInit {
         this.weHaveResults = true;
       });
   }    
+
+  goBack() {
+    this.location.back();
+  }  
 
 }

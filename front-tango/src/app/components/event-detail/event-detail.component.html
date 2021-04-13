@@ -28,7 +28,11 @@
         <div class="row" *ngIf="weHaveResults">
             <div class="col-md-10 col-md-offset-1">
                 <h6>{{resEvent.eventType}}</h6>
-                <h1 class="m-t-0">{{resEvent.title}}</h1>
+                <h1 class="m-t-0">
+                    <button type="button" class="btn btn-primary btn-sm" (click)="goBack()">
+                        <i class="fa fa-backward"></i>
+                    </button> {{resEvent.title}}
+                </h1>
             </div>
         </div>
 

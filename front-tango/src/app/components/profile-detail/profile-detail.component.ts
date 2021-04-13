@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { ProfileService } from 'src/app/services/profile.service';
 import { UtilsService } from 'src/app/services/utils.service';
@@ -20,6 +21,7 @@ export class ProfileDetailComponent implements OnInit {
   constructor(
     private profileService: ProfileService,
     private utils: UtilsService,
+    private location: Location,
     private route: ActivatedRoute    
   ) { }
 
@@ -40,6 +42,10 @@ export class ProfileDetailComponent implements OnInit {
         console.log(this.resProfile);
         this.weHaveResults = true;
       });
+  }    
+
+  goBack() {
+    this.location.back();
   }    
 
 }
