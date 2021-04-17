@@ -62,6 +62,7 @@ const routes : Routes = [
   { path: "events/:typeOfEvent", component: EventListComponent },
   { path: "events/id/:id", component: EventDetailComponent },
   { path: "bloglist", component: BlogListComponent },
+  { path: "bloglist/tag/:tag", component: BlogListComponent },  
   { path: "blog/id/:id", component: BlogDetailComponent },
   
   // Aca estoy protegiendo una ruta:

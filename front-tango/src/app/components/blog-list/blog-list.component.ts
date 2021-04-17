@@ -37,11 +37,15 @@ export class BlogListComponent implements OnInit {
 
   ngOnInit() {
     this.state = this.utils.getState();
-
     this.route.paramMap.subscribe(params => {
-      // this.tag = params.get("tag");
+      this.tag = params.get("tag");
       // this.tag = this.utils.capitalizeFirstLetter(this.tag.toLowerCase());
-      this.getAllBlogs();
+      if (this.tag) {
+          this.getBlogsByTag(this.tag);
+
+      } else {
+          this.getAllBlogs();
+      }
     });
   }
 

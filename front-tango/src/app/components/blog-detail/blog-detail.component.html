@@ -26,9 +26,12 @@
 
             <ul class="list-inline m-t-3">
                 <li class="list-inline-item" *ngFor="let tag of resBlog.tags.split(',')">
-                    <button class="btn btn-primary btn-sm" (click)="getBlogsByTag(tag)">{{tag}}</button>
+                    <!-- <button class="btn btn-primary btn-sm" (click)="getBlogsByTag(tag)">{{tag}}</button> -->
+                    <a [routerLink]="['/bloglist/tag', tag]" class="btn btn-primary btn-sm">{{tag}}</a>
                 </li>
             </ul>
+
+            <!-- <a [routerLink]="['/blog/id', blog._id]"><h2>{{blog.title}}</h2></a> -->
 
             <hr>
             <div class="row">
